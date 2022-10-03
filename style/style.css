@@ -1,0 +1,52 @@
+/* variable css */
+:root {
+    --black: #000000;
+    --off-black: #060606;
+    --white: #ffffff;
+    --off-white: #cecece;
+    --dark-grey: #141414;
+    --grey: #666666;
+}
+
+/* Font face import */
+@font-face {
+    font-family: Poppins;
+    src: url(../font/Poppins-Regular.ttf);
+}
+
+
+/* Reset all web parameters */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+img,
+input,
+button,
+.icon {
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
