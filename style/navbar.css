@@ -3,21 +3,20 @@
     --black: #000000;
     --off-black: #060606;
     --white: #ffffff;
-    --off-white: #cecece;
+    --off-white: #f3f3f3;
     --dark-grey: #141414;
     --grey: #666666;
 }
 
+/* ---- navigation bar css ---- */
 nav {
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+    background-color: var(--white);
 }
 
 /* ---- navigation bar logo ---- */
-.logo label {
-    color: var(--white);
-}
-
 .logo label {
     font-size: 30px;
     font-weight: 500;
@@ -35,86 +34,14 @@ nav {
 .nav-links li {
     display: block;
     margin: auto 10px;
+    color: var(--grey);
 }
 
-.nav-links li a{
-    color: var(--white);
+.nav-links li a {
+    color: var(--black);
     font-weight: 500;
     font-size: 18px;
-    transition: 500ms;
-}
-
-.nav-links li a:hover {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 5px 20px;
-    border-radius: 20px;
-}
-
-/* ---- navigation bar buttons ---- */
-.nav-actions {
-    display: flex;
-    justify-content: space-evenly;
-    width: 10%;
-    transition: 500ms;
-}
-
-.nav-actions button {
-    border: 0px solid transparent;
-    background-color: transparent;
-}
-
-.nav-btn {
-    position: relative;
-    width: 50px;
-    text-align: center;
-}
-
-.nav-actions button p a {
-    color: var(--grey);
-    transition: 500ms;
-}
-
-.nav-btn:hover > .nav-action-label a {
-    color: var(--white);
-}
-
-.nav-btn .icon {
-    margin-inline: auto;
-    font-size: 22px;
-    margin-bottom: 3px;
-    color: var(--black);
-    -webkit-text-stroke: var(--white);
-    -webkit-text-stroke-width: 1px;
     transition: 200ms;
-}
-
-.nav-btn:hover > .icon {
-    -webkit-text-stroke: var(--golden);
-    -webkit-text-stroke-width: 1px;
-}
-
-.nav-btn .btn-badge {
-    position: absolute;
-    top: -5px;
-    right: 0;
-    background: var(--background, var(--off-black));
-    background: var(--black);
-    width: 20px;
-    height: 20px;
-    display: grid;
-    place-items: center;
-    line-height: 0;
-    font-size: 13px;
-    color: var(--white);
-    border: 0.5px solid var(--white);
-    border-radius: 50%;
-    transition: 200ms;
-}
-
-.nav-btn:hover > .btn-badge {
-    background-color: var(--white);
-    color: var(--black);
 }
 
 /* navigation bar lines for collapsable nav bar */
@@ -123,34 +50,11 @@ nav {
     margin: auto 0;
 }
 
-.line-full {
-    background-color: var(--black);
-    width: 20px;
-    height: 2px;
-    margin: 5px;
-}
-
-.line-half {
-    background-color: var(--black);
-    width: 10px;
-    height: 2px;
-    margin: 5px;
-}
-
-.home {
-    background-color: var(--black);
+.nav-lines i {
+    font-size: 20px;
 }
 
 @media (max-width: 1000px) {
-    nav {
-        background-color: var(--white);
-    }
-
-    .logo label {
-        color: var(--black);
-        font-weight: 700;
-    }
-
     .nav-actions {
         background-color: var(--white);
         position: fixed;
@@ -176,20 +80,19 @@ nav {
         margin: 0 0;
         display: flex;
         flex-direction: column;
-        top: 80px;
+        top: 7vh;
         left: 0;
         right: 0;
-        width: 100vw;
-        height: 0;
-        background-color: #000000e2;
+        width: 0;
+        height: 93vh;
+        background-color: #d7d7d7e2;
         transform: 200ms;
         overflow: hidden;
         transition: 200ms;
-        /* opacity: 0%; */
     }
 
     .nav-links.active {
-        height: 40%;
+        width: 80vw;
     }
 
     .nav-links li {
@@ -208,11 +111,6 @@ nav {
 
     .nav-btn:hover > .nav-action-label {
         color: var(--black);
-    }
-
-    .nav-btn:hover > .btn-badge {
-        background-color: var(--black);
-        color: var(--golden);
     }
 }
 

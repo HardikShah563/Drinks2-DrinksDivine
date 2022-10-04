@@ -11,7 +11,7 @@
 /* Font face import */
 @font-face {
     font-family: Poppins;
-    src: url(../font/Poppins-Regular.ttf);
+    src: url(../font/JosefinSans-VariableFont_wght.ttf);
 }
 
 
@@ -21,6 +21,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
+    user-select: none;
 }
 
 li {
@@ -50,3 +51,44 @@ header {
     padding: 20px 40px;
 }
 
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 40%;
+    margin: 20px auto;
+    padding: 5%;
+    background-color: #ffc400;
+    border-radius: 30px;
+}
+
+main h1 { 
+    font-size: 60px;
+    /* width: 50%; */
+}
+
+main h3 {
+    margin: 10px auto;
+}
+
+@media (width < 1000px) {
+    main {
+        width: 60%;
+    }
+}
+
+@media (width < 400px) {
+    main {
+        width: 80%;
+    }
+
+    main h1 {
+        font-size: 40px;
+    }
+
+    main img {
+        position: relative;
+        left: -100px;
+    }
+}
