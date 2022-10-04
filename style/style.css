@@ -6,6 +6,7 @@
     --off-white: #cecece;
     --dark-grey: #141414;
     --grey: #666666;
+    --yellow: #ffc400;
 }
 
 /* Font face import */
@@ -43,6 +44,7 @@ button,
 html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -51,44 +53,126 @@ header {
     padding: 20px 40px;
 }
 
+.main {
+    height: 90vh;
+}
+
 main {
+    background-size: cover;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    width: 40%;
+    width: 65%;
+    height: 80vh;
     margin: 20px auto;
     padding: 5%;
-    background-color: #ffc400;
-    border-radius: 30px;
+    background-color: var(--yellow);
+    border-radius: 80px;
 }
 
 main h1 { 
-    font-size: 60px;
-    /* width: 50%; */
+    font-size: 5vw;
 }
 
 main h3 {
     margin: 10px auto;
 }
 
+main img {
+    display: block;
+    margin: auto auto;
+}
+
+/* <======== About Us CSS ========> */
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    margin: 5vh 0;
+    margin-bottom: 0;
+    padding: 10vh 10vw;
+    background-color: var(--yellow);
+    align-items: center;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.about-us-info {
+    width: 60%;
+    margin: auto auto;
+}
+
+.about-us-info h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.about-us-info p {
+    width: 80%;
+    font-size: 20px;
+}
+
+.about-us-img img {
+    width: 20vw;
+    margin: 20px;
+}
+
+/* <======== Menu Section CSS ========>  */
+.explore-menu {
+    width: 80%;
+    margin: auto auto;
+}
+
+
+
 @media (width < 1000px) {
     main {
-        width: 60%;
+        width: 70%;
+        height: 80vh;
+        border-radius: 40px;
+    }
+
+    main h1 {
+        font-size: 7vw;
+    }
+
+    main img {
+        /* position: relative;
+        right: -2vw; */
+    }
+
+    .about-us-info {
+        width: 80%;
+        margin: auto auto;
+    }
+
+    .about-us-info h1 {
+        font-size: 42px;
+    }
+
+    .about-us-info p {
+        width: 100%;
+    }
+
+    .about-us-img img {
+        width: 200px;
+        margin: 0 0 50px 0;
     }
 }
 
-@media (width < 400px) {
+
+@media (width < 600px) {
     main {
         width: 80%;
     }
 
     main h1 {
-        font-size: 40px;
+        font-size: 10vw;
     }
 
     main img {
         position: relative;
-        left: -100px;
     }
 }
