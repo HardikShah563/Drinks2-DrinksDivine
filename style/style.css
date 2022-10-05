@@ -3,10 +3,11 @@
     --black: #000000;
     --off-black: #060606;
     --white: #ffffff;
-    --off-white: #cecece;
+    --off-white: #f1f1f1;
     --dark-grey: #141414;
     --grey: #666666;
     --yellow: #ffc400;
+    --deep-yellow: #a47e00;
 }
 
 /* Font face import */
@@ -63,7 +64,7 @@ main {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    width: 65%;
+    width: 45%;
     height: 80vh;
     margin: 20px auto;
     padding: 5%;
@@ -71,7 +72,7 @@ main {
     border-radius: 80px;
 }
 
-main h1 { 
+main h1 {
     font-size: 5vw;
 }
 
@@ -80,7 +81,7 @@ main h3 {
 }
 
 main img {
-    display: block;
+    /* position: absolute; */
     margin: auto auto;
 }
 
@@ -90,9 +91,7 @@ main img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap-reverse;
-    margin: 5vh 0;
-    margin-bottom: 0;
-    padding: 10vh 10vw;
+    padding: 15vh 10vw;
     background-color: var(--yellow);
     align-items: center;
     border-top-left-radius: 80px;
@@ -120,14 +119,112 @@ main img {
 }
 
 /* <======== Menu Section CSS ========>  */
-.explore-menu {
-    width: 80%;
-    margin: auto auto;
+
+.menu-section {
+    background-color: var(--yellow);
 }
 
+.menu {
+    padding: 100px 0;
+    background-color: var(--white);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    box-shadow: -10px -10px 50px var(--deep-yellow);
+}
 
+.menu h1 {
+    font-size: 48px;
+    text-align: center;
+    margin: 40px 0;
+}
 
-@media (width < 1000px) {
+.explore-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu-item {
+    display: flex;
+    background-color: var(--yellow);
+    margin: 10px;
+    border-radius: 20px;
+    /* width: min-content; */
+}
+
+.menu-item-img img {
+    margin: 10px;
+    width: 120px;
+    border-radius: 20px;
+}
+
+.menu-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 10px;
+}
+
+.drink-name {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.cost {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.menu-item-details input {
+    width: 50px;
+    margin: 0 10px 0 0;
+    padding: 0 0 0 5px;
+    background-color: #ffc400;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+}
+
+.menu-item-details form {
+    display: flex;
+}
+
+.menu-item-details button {
+    background-color: var(--black);
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-item-details form i {
+    font-size: 30px;
+    color: var(--off-white);
+}
+
+::-webkit-input-placeholder {
+    color: var(--black);
+}
+
+/* <======== Contact Section CSS ========>  */
+
+.contact-section {
+    background-color: var(--white);
+}
+
+.contact-page {
+    /* box-shadow: -10px -10px 100px var(--black); */
+    background-color: var(--yellow);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+@media (width < 1150px) {
+    /* <======== Main Section CSS ========>  */
+
     main {
         width: 70%;
         height: 80vh;
@@ -142,6 +239,8 @@ main img {
         /* position: relative;
         right: -2vw; */
     }
+
+    /* <======== About Us CSS ========>  */
 
     .about-us-info {
         width: 80%;
@@ -160,12 +259,20 @@ main img {
         width: 200px;
         margin: 0 0 50px 0;
     }
+
+    /* <======== Menu Section CSS ========>  */
+
+    .menu {
+        width: 90%;
+    }
 }
 
 
 @media (width < 600px) {
+    /* <======== Main Section CSS ========>  */
+
     main {
-        width: 80%;
+        width: 90%;
     }
 
     main h1 {
@@ -174,5 +281,11 @@ main img {
 
     main img {
         position: relative;
+    }
+
+    /* <======== Menu Section CSS ========>  */
+
+    .menu {
+        width: 100%;
     }
 }
