@@ -6,6 +6,7 @@
     --off-white: #f1f1f1;
     --dark-grey: #141414;
     --grey: #666666;
+    --light-grey: #a8a8a8;
     --yellow: #ffc400;
     --deep-yellow: #a47e00;
 }
@@ -70,6 +71,7 @@ main {
     padding: 5%;
     background-color: var(--yellow);
     border-radius: 80px;
+    box-shadow: -5px -5px 10px var(--light-grey);
 }
 
 main h1 {
@@ -93,6 +95,7 @@ main img {
     flex-wrap: wrap-reverse;
     padding: 15vh 10vw;
     background-color: var(--yellow);
+    box-shadow: -10px -10px 100px var(--light-grey);
     align-items: center;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -179,34 +182,69 @@ main img {
     font-weight: 400;
 }
 
-.menu-item-details input {
-    width: 50px;
-    margin: 0 10px 0 0;
-    padding: 0 0 0 5px;
-    background-color: #ffc400;
+.add-to-cart {
+    background-color: var(--off-white);
+    padding: 6px;
     border: 1px solid var(--black);
-    border-radius: 8px;
-}
-
-.menu-item-details form {
-    display: flex;
-}
-
-.menu-item-details button {
-    background-color: var(--black);
-    padding: 5px;
-    border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
-.menu-item-details form i {
-    font-size: 30px;
-    color: var(--off-white);
+.add-to-cart:hover {
+    background-color: var(--white);
 }
 
-::-webkit-input-placeholder {
+.add-to-cart i {
+    padding: 0;
+    border: none;
+    font-size: 18px;
+}
+
+.go-to-menu {
+    margin: 5vh auto;
+    box-shadow: 2px 2px 8px var(--black);
+}
+
+.btn-animation {
+    width: 180px;
+    background-color: var(--off-white);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    text-align: center;
+    padding: 12px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.btn-animation span {
     color: var(--black);
+    cursor: pointer;
+    display: block;
+    position: relative;
+    transition: 0.4s;
+}
+
+.btn-animation span a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.btn-animation span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+}
+
+.btn-animation:hover span {
+    padding-right: 25px;
+}
+
+.btn-animation:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
 /* <======== Contact Section CSS ========>  */
@@ -216,10 +254,74 @@ main img {
 }
 
 .contact-page {
-    /* box-shadow: -10px -10px 100px var(--black); */
+    box-shadow: -10px -10px 100px var(--light-grey);
     background-color: var(--yellow);
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
+}
+
+.contact-form {
+    width: 40%;
+    margin: auto auto;
+}
+
+.contact-form h1 {
+    font-size: 48px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-form form input, .contact-form form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    resize: none;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+}
+
+.contact-form form button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: auto auto;
+    padding: 50px 0;
+}
+
+.contact-info-box {
+    text-align: center;
+    margin: 20px;
+}
+
+.contact-info-box i {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.contact-info-box p a {
+    color: var(--black);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--yellow);
+}
+
+.footer-content {
+    background-color: var(--white);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    box-shadow: -10px -10px 50px var(--deep-yellow);
+    padding: 50px 0;
+    height: 100%;
 }
 
 @media (width < 1150px) {
@@ -262,8 +364,19 @@ main img {
 
     /* <======== Menu Section CSS ========>  */
 
-    .menu {
-        width: 90%;
+    .explore-menu {
+        width: 100%;
+    }
+
+    /* <======== Contact Section CSS ========>  */
+
+    .contact-form {
+        width: 50%;
+    }
+
+    .contact-info {
+        width: 60%;
+        flex-direction: column;
     }
 }
 
@@ -287,5 +400,15 @@ main img {
 
     .menu {
         width: 100%;
+    }
+
+    /* <======== Contact Section CSS ========>  */
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .footer-content {
+        padding-top: 100px;
     }
 }
