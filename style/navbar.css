@@ -44,6 +44,14 @@ nav {
     transition: 200ms;
 }
 
+.nav-links li a i {
+    transition-duration: 200ms;
+}
+
+.nav-links li a i:hover {
+    transform: scale(1.2);
+}
+
 /* navigation bar lines for collapsable nav bar */
 .nav-lines {
     display: none;
@@ -113,6 +121,11 @@ nav {
         padding: 20px 0;
         text-align: left;
         border-bottom: 1px solid var(--grey);
+    }
+
+    .nav-grey-line {
+        display: none;
+        opacity: 0;
     }
 
     .nav-btn .icon {

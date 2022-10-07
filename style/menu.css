@@ -11,6 +11,7 @@
     --background-yellow: #fcefc8;
     --tag-yellow: #ffde7b;
     --deep-yellow: #a47e00;
+    --background-green: #9aff95;
 }
 
 /* Font face import */
@@ -49,6 +50,12 @@ html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    background-color: #ffffffa1;
 }
 
 /* <======== Sort Tag Div CSS ========>  */
@@ -202,4 +209,25 @@ html {
 .btn-animation:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.menu-division-hr {
+    width: 80%;
+    margin: auto auto;
+}
+
+.add-to-cart-overlay {
+    position: fixed;
+    top: 100px;
+    right: -300px;
+    padding: 10px;
+    border: 1px dashed var(--black);
+    border-right: none;
+    background-color: var(--background-green);
+    border-radius: 4px;
+    transition-duration: 300ms;
+}
+
+.add-to-cart-overlay.show {
+    right: 0px;
 }
