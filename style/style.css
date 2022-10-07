@@ -162,6 +162,7 @@ main img {
     display: flex;
     background-color: var(--yellow);
     margin: 10px;
+    padding: 10px;
     border-radius: 20px;
     /* width: min-content; */
 }
