@@ -87,12 +87,13 @@ html {
 }
 
 .plus {
+    rotate: 45deg;
     cursor: pointer;
     transition-duration: 100ms;
 }
 
 .plus.active {
-    rotate: 45deg;
+    rotate: 0deg;
 }
 
 .tag-icon i {
@@ -119,7 +120,6 @@ html {
     background-color: var(--yellow);
     margin: 10px;
     border-radius: 20px;
-    /* width: min-content; */
 }
 
 .menu-item-img img {
@@ -230,4 +230,37 @@ html {
 
 .add-to-cart-overlay.show {
     right: 0px;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--yellow);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.footer-content {
+    padding: 50px 0;
+    height: 100%;
+}
+
+@media (width < 1150px) {
+    .contact-form {
+        width: 50%;
+    }
+
+    .contact-info {
+        width: 60%;
+        flex-direction: column;
+    }
+}
+
+@media (width < 600px) {
+    .contact-form {
+        width: 90%;
+    }
+
+    .footer-content {
+        padding-top: 100px;
+    }
 }
