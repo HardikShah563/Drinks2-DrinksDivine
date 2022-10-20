@@ -11,4 +11,3 @@ function screenWidthTest() {
         navGreyLine.remove();
     }
 }
-// setInterval(screenWidthTest, 10);

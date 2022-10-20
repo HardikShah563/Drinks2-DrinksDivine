@@ -52,6 +52,11 @@ html {
     align-items: center;
 }
 
+form {
+    width: 350px;
+    margin: auto auto;
+}
+
 .login-register {
     width: 60%;
     margin: 100px auto 0px auto;
@@ -103,15 +108,28 @@ html {
     font-size: 14px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
+    form {
+        width: 100%;
+    }
+
+    .login-register {
+        width: 80%;
+    }
+
+    .account-setting {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
     .login-register h1 {
         font-size: 40px;
     }
 
     .login-register {
-        width: 80%;
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 95%;
+        padding: 100px 10px 0 10px;
     }
 
     .login-register input ,.login-register button {
@@ -123,6 +141,6 @@ html {
     }
 
     .account-setting {
-        width: 80%;
+        width: 95%;
     }
 }

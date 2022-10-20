@@ -58,51 +58,7 @@ html {
     background-color: #ffffffa1;
 }
 
-/* <======== Sort Tag Div CSS ========>  */
-
-.sort-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 50%;
-    margin: auto auto;
-    border: 1px solid var(--grey);
-    border-radius: 50px;
-    background-color: var(--background-yellow);
-}
-
-.tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3px;
-    font-size: 14px;
-    border: 1px dashed var(--off-black);
-    border-radius: 50px;
-    background-color: var(--tag-yellow);
-}
-
-.tag i {
-    padding: 12px;
-}
-
-.plus {
-    rotate: 45deg;
-    cursor: pointer;
-    transition-duration: 100ms;
-}
-
-.plus.active {
-    rotate: 0deg;
-}
-
-.tag-icon i {
-    padding: 10px 10px 10px 0px;
-    margin: 0px;
-}
-
-/* <======== Menu Items CSS ========> */
-.menu h1 {
+.cart h1 {
     font-size: 48px;
     text-align: center;
     margin: 40px 0;
