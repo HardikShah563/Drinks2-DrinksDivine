@@ -101,9 +101,9 @@ main img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap-reverse;
-    padding: 15vh 10vw;
+    padding: 10vh 10vw;
     background-color: var(--yellow);
-    box-shadow: -10px -10px 100px var(--light-grey);
+    box-shadow: -10px -10px 100px var(--white);
     align-items: center;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -129,133 +129,6 @@ main img {
     margin: 20px;
 }
 
-/* <======== Menu Section CSS ========>  */
-
-.menu-section {
-    background-color: var(--yellow);
-}
-
-.menu {
-    padding: 100px 0;
-    background-color: var(--white);
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    box-shadow: -10px -10px 50px var(--deep-yellow);
-}
-
-.menu h1 {
-    font-size: 48px;
-    text-align: center;
-    margin: 40px 0;
-}
-
-.explore-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px 0;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.menu-item {
-    display: flex;
-    background-color: var(--yellow);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    /* width: min-content; */
-}
-
-.menu-item-img img {
-    margin: 10px;
-    width: 120px;
-    border-radius: 20px;
-}
-
-.menu-item-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 10px;
-    padding: 10px;
-}
-
-.drink-name {
-    font-size: 30px;
-    font-weight: 800;
-}
-
-.cost {
-    font-size: 24px;
-    font-weight: 400;
-}
-
-.add-to-cart {
-    background-color: var(--off-white);
-    padding: 6px;
-    border: 1px solid var(--black);
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: var(--white);
-}
-
-.add-to-cart i {
-    padding: 0;
-    border: none;
-    font-size: 18px;
-}
-
-.go-to-menu {
-    margin: 5vh auto;
-    box-shadow: 2px 2px 8px var(--black);
-}
-
-.btn-animation {
-    width: 180px;
-    background-color: var(--off-white);
-    border: 1px solid var(--black);
-    border-radius: 8px;
-    text-align: center;
-    padding: 12px;
-    transition: all 0.4s;
-    cursor: pointer;
-}
-
-.btn-animation span {
-    color: var(--black);
-    cursor: pointer;
-    display: block;
-    position: relative;
-    transition: 0.4s;
-}
-
-.btn-animation span a {
-    text-decoration: none;
-    color: var(--black);
-}
-
-.btn-animation span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.4s;
-}
-
-.btn-animation:hover span {
-    padding-right: 25px;
-}
-
-.btn-animation:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
 /* <======== Contact Section CSS ========>  */
 
 .contact-section {
@@ -263,7 +136,7 @@ main img {
 }
 
 .contact-page {
-    box-shadow: -10px -10px 100px var(--light-grey);
+    box-shadow: -10px -10px 100px var(--white);
     background-color: var(--yellow);
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -321,7 +194,7 @@ main img {
 
 footer {
     text-align: center;
-    background-color: var(--yellow);
+    padding: 50px 0 0 0;
 }
 
 .footer-content {
@@ -331,6 +204,18 @@ footer {
     box-shadow: -10px -10px 50px var(--deep-yellow);
     padding: 50px 0;
     height: 100%;
+}
+
+.footer-index {
+    background-color: var(--white);
+}
+
+.foot {
+    background-color: var(--white);
+}
+
+.foot-yellow {
+    background-color: var(--yellow);
 }
 
 @media (width < 1150px) {

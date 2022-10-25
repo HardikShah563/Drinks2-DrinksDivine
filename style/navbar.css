@@ -16,6 +16,12 @@ nav {
     padding: 20px;
 }
 
+.nav {
+    position: sticky;
+    top: 0;
+    background-color: #ffffffa1;
+}
+
 /* ---- navigation bar logo ---- */
 .logo label {
     font-size: 30px;

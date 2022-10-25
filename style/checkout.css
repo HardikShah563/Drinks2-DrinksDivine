@@ -52,12 +52,6 @@ html {
     overflow-x: hidden;
 }
 
-.nav {
-    position: sticky;
-    top: 0;
-    background-color: #ffffffa1;
-}
-
 .order-details {
     width: 800px;
     background-color: var(--off-white);
