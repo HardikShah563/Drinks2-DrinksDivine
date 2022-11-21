@@ -1,12 +1,15 @@
+<?php include 'functions.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
+    <?php include 'header.php' ?>
     <title>Drinks Divine</title>
 </head>
 
 <body>
+    <?php include 'navbar.php' ?>
+
     <section class="main" id="main" name="main">
         <main>
             <div class="text">
