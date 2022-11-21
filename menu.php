@@ -1,17 +1,15 @@
+<?php include 'functions.php' ?>
+<?php
+
+$drinks = get_drinks();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'header.php' ?>
     <title>Menu | Drinks Divine</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <!-- Including Icons -->
-    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
-    <!-- Including Javascript File -->
-    <script src="../script/app.js" defer></script>
-    <script src="../script/menu.js" defer></script>
 </head>
 
 <body>
@@ -38,226 +36,35 @@
             </div>
         </div>
 
+        
+        <?php if (mysqli_num_rows($drinks)) { ?>
         <div class="explore-menu">
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/blue-drink.jpg" alt="Blue Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Non-Alcoholic</p>
+            <?php foreach ($drinks as $drink) { ?>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="img/<?= $drink['imgName']?>-drink.jpg" alt="" />
                     </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/red-drink.jpg" alt="Golden Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Alcoholic</p>
+                    <div class="menu-item-details">
+                        <p class="drink-name"><?= $drink['dName'] ?></p>
+                        <p class="cost">£<?= $drink['dPrice'] ?></p>
+                        <div class="tag tag-icon" style="width: 150px;">
+                            <i class="fa-solid fa-tag tag-icon"></i> 
+                            <p><?= $drink['dTag'] ?></p>
+                        </div>
+                    <div class="add-to-basket" style="width: 150px;">
+                    <form action="add-to-cart.php" method="POST">
+                        <input type="hidden" name="dID" value="<?= $drink['dID'] ?>">
+                        <button type="submit" name="add-to-cart" class="add-to-cart btn">
+                            <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                            &nbsp;Add to Cart
+                        </button>
+                    </form>
                     </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
                 </div>
+                </div>
+            <?php } ?>
             </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/golden-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Coctails</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/green-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Non-Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/orange-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Non-Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/white-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Coctails</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <hr class="menu-division-hr">
-
-        <div class="explore-menu">
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/blue-drink.jpg" alt="Blue Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Non-Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/red-drink.jpg" alt="Golden Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/golden-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Coctails</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/green-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Non-Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/orange-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Alcoholic</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/white-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <div class="tag tag-icon">
-                        <i class="fa-solid fa-tag tag-icon"></i>
-                        <p>Coctails</p>
-                    </div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Add to Cart
-                    </button>
-                </div>
-            </div>
+        <?php } ?>
         </div>
 
         <button class="go-to-menu btn-animation">
@@ -268,6 +75,7 @@
             </span>
         </button>
     </div>
+    
     <div class="add-to-cart-overlay">
         <p>Product Added to Cart</p>
     </div>

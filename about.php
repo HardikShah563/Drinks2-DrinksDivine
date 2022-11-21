@@ -19,7 +19,7 @@
             </p>
         </div>
         <div class="about-us-img">
-            <img src="../img/about-us.png" alt="About Us Image">
+            <img src="./img/about-us.png" alt="About Us Image">
         </div>
     </section>
 

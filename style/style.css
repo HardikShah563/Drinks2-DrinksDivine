@@ -542,7 +542,6 @@ Menu CSS
 .menu-item-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     margin: 10px;
     padding: 10px;
 }
@@ -953,10 +952,6 @@ form {
     align-items: center;
     border: 1px solid var(--black);
     border-radius: 5px;
-}
-
-.login-register form input {
-    padding: 12px;
 }
 
 .login-register a {

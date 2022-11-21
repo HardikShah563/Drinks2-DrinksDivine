@@ -1,18 +1,19 @@
+<?php include 'functions.php' ?>
+
+<?php
+
+$cart = get_cart();
+if (isset($cart)) {
+  $drinks = get_drinks_by_ids($cart);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'header.php' ?>
     <title>Cart | Drinks Divine</title>
-    <!-- Including Style Sheet-->
-    <link rel="stylesheet" href="../style/style.css">
-    <!-- Including Icons -->
-    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
-    <!-- Including Javascript File -->
-    <script src="../script/app.js" defer></script>
-    <script src="../script/menu.js" defer></script>
 </head>
 
 <body>
@@ -21,99 +22,52 @@
     <div class="cart">
         <h1>Cart</h1>
 
+        <?php if (!mysqli_num_rows($drinks)) { ?>
+            <h2 style="text-align: center;">! Cart is empty !</h2>
+        <?php } ?>
+
+    
+        <?php if (mysqli_num_rows($drinks)) { ?>
         <div class="explore-menu">
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/blue-drink.jpg" alt="Blue Drink">
+            <?php foreach ($drinks as $drink) { ?>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="img/<?= $drink['imgName'] ?>-drink.jpg" alt="" />
+                    </div>
+                    <div class="menu-item-details">
+                        <p class="drink-name"><?= $drink['dName'] ?></p>
+                        <p class="cost">£<?= $drink['dPrice'] ?></p>
+                        <div class="tag tag-icon" style="width: 150px;">
+                            <i class="fa-solid fa-tag tag-icon"></i> 
+                            <p><?= $drink['dTag'] ?></p>
+                        </div>
+                    <div class="add-to-basket">
+                        <form action="add-to-cart.php" method="POST">
+                            <input type="hidden" name="dID" value="<?= $drink['dID'] ?>">
+                            <input type="hidden" id="item-<?= $drink['dID'] ?>" name="quantity" value="<?= $cart[$drink['dID']] ?>">
+                            <button class="add-to-cart" name="remove-from-cart">
+                                <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                                &nbsp;Remove from Cart
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/red-drink.jpg" alt="Golden Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/golden-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/green-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/orange-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-img">
-                    <img src="../img/white-drink.jpg" alt="Green Drink">
-                </div>
-                <div class="menu-item-details">
-                    <p class="drink-name">Blue Scotch</p>
-                    <p class="cost">$500</p>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                        &nbsp;Remove from Cart
-                    </button>
-                </div>
-            </div>
+            <?php } ?>
         </div>
+    
+        <div style="margin-top: 100px;">
+            <a href="checkout.php" class="btn">Total: - <?= get_total() ?>£ Checkout</a>
+        </div>
+        <?php } ?>
+        </div>
+    </div>
 
-        <button class="go-to-menu btn-animation">
-            <span>
-                <a href="checkout.html">
-                    Checkout
-                </a>
-            </span>
-        </button>
+    <button class="go-to-menu btn-animation">
+        <span>
+            <a href="checkout.html"> Checkout </a>
+        </span>
+    </button>
+
     </div>
     <div class="add-to-cart-overlay">
         <p>Product Removed from Cart</p>
