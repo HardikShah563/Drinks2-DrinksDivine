@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Drinks Divine</title>
+    <!-- Including Style Sheet-->
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- Including Icons -->
+    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+    <!-- Including Javascript File -->
+    <script src="../script/app.js" defer></script>
+    <!-- <script src="../script/menu.js" defer></script> -->
+</head>
+
+<body>
+    <section class="nav">
+        <nav>
+            <div class="nav-lines">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+            <div class="logo">
+                <label>Drinks Divine</label>
+            </div>
+            <div class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li class="nav-grey-line">|</li>
+                <li><a href="./wishlisht.html"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="./login.html"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="./cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </div>
+        </nav>
+    </section>
+
+    <section class="order-details">
+        <h1>Checkout</h1>
+        <hr>
+        <div class="checkout-product">
+            <div class="product-info">
+                <h3>Product 1</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="product-cost">
+                <h2>$500</h2>
+            </div>
+        </div>
+        <div class="checkout-product">
+            <div class="product-info">
+                <h3>Product 2</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="product-cost">
+                <h2>$450</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="checkout-product">
+            <div class="product-info">
+                <h3>Total</h3>
+            </div>
+            <div class="product-cost">
+                <h2>$950</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-form">
+        <form>
+            <h3>Personal Details: </h3>
+            <hr>
+            <div class="grouping">
+                <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required>
+                <input type="text" name="LastName" id="LastName" placeholder="Last Name" required>
+            </div>
+            <div class="grouping">
+                <input type="number" name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number" required>
+                <input type="email" name="EmailId" id="EmailId" placeholder="Email Address" required>
+            </div>
+
+            <h3>Shipping Address: </h3>
+            <hr>
+            <div class="grouping">
+                <input type="text" name="Address1" id="Address1" placeholder="Flat No. / Building Name" required>
+            </div>
+            <div class="grouping">
+                <input type="text" name="" id="" placeholder="Road Number / Area / Colony" required>
+            </div>
+            <div class="grouping">
+                <input type="text" name="City" id="City" placeholder="City" required>
+                <input type="text" name="State" id="State" placeholder="State" required>
+                <input type="number" name="Pincode" id="Pincode" placeholder="Pincode" required>
+            </div>
+            <div class="grouping">
+                <input type="text" name="nearby-location" id="nearby-location" placeholder="Nearby Location (optional)">
+            </div>
+
+            <button class="btn-animation">
+                <span>
+                    <a target="_blank" href="#"> Save Information </a>
+                </span>
+            </button>
+        </form>
+
+        <form>
+            <h3>Card Details: </h3>
+            <hr>
+            <div class="grouping">
+                <input type="text" name="card-holder" id="card-holder" placeholder="Card Holder" required>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div class="grouping">
+                <input type="number" name="card-number" id="card-number" placeholder="Card Number" required>
+                <input type="number" name="CVV" id="CVV" placeholder="CVV" required>
+            </div>
+            
+            <button class="btn-animation">
+                <span>
+                    <a target="_blank" href="#"> Proceed </a>
+                </span>
+            </button>
+        </form>
+    </section>
+
+    <section class="" id="footer">
+        <footer>
+            <div class="footer-content">
+                <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>
