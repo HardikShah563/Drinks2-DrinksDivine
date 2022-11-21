@@ -16,26 +16,7 @@
 </head>
 
 <body>
-    <section class="nav">
-        <nav>
-            <div class="nav-lines">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </div>
-            <div class="logo">
-                <label>Drinks Divine</label>
-            </div>
-            <div class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./menu.html">Menu</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li class="nav-grey-line">|</li>
-                <li><a href="./wishlisht.html"><i class="fa-regular fa-heart"></i></a></li>
-                <li><a href="./login.html"><i class="fa-regular fa-user"></i></a></li>
-                <li><a href="./cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-            </div>
-        </nav>
-    </section>
+    <?php include 'navbar.php' ?>
     
     <div class="cart">
         <h1>Cart</h1>
