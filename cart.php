@@ -25,46 +25,40 @@ if (isset($cart)) {
         <?php if (!mysqli_num_rows($drinks)) { ?>
             <h2 style="text-align: center;">! Cart is empty !</h2>
         <?php } ?>
-
     
-        <?php if (mysqli_num_rows($drinks)) { ?>
+    <!-- --------------------------- -->
+    <?php if (mysqli_num_rows($drinks)) { ?>
         <div class="explore-menu">
-            <?php foreach ($drinks as $drink) { ?>
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="img/<?= $drink['imgName'] ?>-drink.jpg" alt="" />
-                    </div>
-                    <div class="menu-item-details">
-                        <p class="drink-name"><?= $drink['dName'] ?></p>
-                        <p class="cost">£<?= $drink['dPrice'] ?></p>
-                        <div class="tag tag-icon" style="width: 150px;">
-                            <i class="fa-solid fa-tag tag-icon"></i> 
-                            <p><?= $drink['dTag'] ?></p>
-                        </div>
-                    <div class="add-to-basket">
-                        <form action="add-to-cart.php" method="POST">
-                            <input type="hidden" name="dID" value="<?= $drink['dID'] ?>">
-                            <input type="hidden" id="item-<?= $drink['dID'] ?>" name="quantity" value="<?= $cart[$drink['dID']] ?>">
-                            <button class="add-to-cart" name="remove-from-cart">
-                                <i class="fa-solid fa-bag-shopping add-to-cart"></i>
-                                &nbsp;Remove from Cart
-                            </button>
-                        </form>
-                    </div>
+          <?php foreach ($drinks as $drink) { ?>
+            <div class="menu-item">
+              <div class="menu-item-img">
+                <img src="img/<?= $drink['imgName'] ?>-drink.jpg" alt="[image-name]-drink.jpg" />
+              </div>
+              <div class="menu-item-details">
+                <p class="drink-name"><?= $drink['dName'] ?></p>
+                <p class="cost">£<?= $drink['dPrice'] ?></p>
+                <div class="add-to-basket">
+                  <form action="add-to-cart.php" method="POST">
+                    <input type="hidden" name="dID" value="<?= $drink['dID'] ?>">
+                    <button class="add-to-cart" name="remove-from-cart">
+                        <i class="fa-solid fa-bag-shopping add-to-cart"></i>
+                        &nbsp;Remove from Cart
+                    </button>
+                  </form>
                 </div>
-            <?php } ?>
+              </div>
+            </div>
+          <?php } ?>
         </div>
-    
         <div style="margin-top: 100px;">
-            <a href="checkout.php" class="btn">Total: - <?= get_total() ?>£ Checkout</a>
+          <h2 class="btn" style="text-align: center;">Total: - £<?= get_total() ?> Checkout</h2>
         </div>
-        <?php } ?>
-        </div>
-    </div>
+      <?php } ?>
+    <!-- --------------------------- -->
 
     <button class="go-to-menu btn-animation">
         <span>
-            <a href="checkout.html"> Checkout </a>
+            <a href="./checkout.php"> Checkout </a>
         </span>
     </button>
 
@@ -72,7 +66,7 @@ if (isset($cart)) {
     <div class="add-to-cart-overlay">
         <p>Product Removed from Cart</p>
     </div>
-    
+    </div>
     <footer class="footer-yellow">
         <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
     </footer>

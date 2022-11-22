@@ -2,7 +2,7 @@
 
 <?php
 
-if (isset($_POST['signup'])) {
+if (isset($_POST['register'])) {
   $data = $_POST;
   $user_exists = email_exists($data['email']);
   if ($user_exists) {
@@ -11,13 +11,14 @@ if (isset($_POST['signup'])) {
       'message' => 'Email is Already Taken!',
     ];
   } else {
+    
     if ($data["password"] == $data["cpassword"]) {
       $data["type"] = 'user';
       $user = signup($data);
       if ($user) {
         $response = [
           'type' => 'success',
-          'message' => 'User Registered Successfully!',
+          'message' => 'User Registered Successfully! You can Log in!',
         ];
         login($data);
       } else {
@@ -49,15 +50,16 @@ if (isset($_POST['signup'])) {
         <h1>Regsiter New Account</h1>
 
         <?php if (isset($response)) { ?>
-          <div class="message-box <?= $response['type'] ?>">
+          <div class="message-box <?= $response['type'] ?>" style="text-align: center;">
             <p><?= $response['message'] ?></p>
           </div>
         <?php } ?>
 
         <form action="?" method="POST">
-            <input type="text" name="user-name" id="user-name" placeholder="User-Name" required>
-            <input type="email" name="user-email" id="user-email" placeholder="Email Address" required>
-            <input type="password" name="user-password" id="user-password" placeholder="Password" required>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <input type="password" name="password" id="password" placeholder="Create Password" required>
+            <input type="password" name="cpassword" id="cpassword" placeholder="Retype Password" required>
             <button type="submit" name="register" style="padding: 12px;">Register</button>
         </form>
     </section>

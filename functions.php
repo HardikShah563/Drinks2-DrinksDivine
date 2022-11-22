@@ -16,9 +16,9 @@ function signup($data)
 {
     global $db;
     $password = md5($data["password"]);
-    $sql = "insert into users(name, email, password, type) values(?,?,?,?)";
+    $sql = "insert into users(name, email, password) values(?,?,?)";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param("ssss", $data["name"], $data["email"], $password, $data["type"]);
+    $stmt->bind_param("sss", $data["name"], $data["email"], $password);
     if ($stmt->execute()) {
         return 1;
     }
@@ -50,10 +50,9 @@ function login($data)
     if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             if ($row["password"] == md5($data["password"])) {
-                $_SESSION["u_id"] = $row["u_id"];
+                $_SESSION["uid"] = $row["uid"];
                 $_SESSION["name"] = $row["name"];
                 $_SESSION["email"] = $row["email"];
-                $_SESSION["type"] = $row["type"];
                 return 1;
             } else {
                 return 0;
@@ -76,7 +75,7 @@ function get_drinks()
 function get_drink($id)
 {
     global $db;
-    $sql = "select * from drinks where dID = ?";
+    $sql = "select * from drinks where pid = ?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $id);
     $stmt->execute();
@@ -86,7 +85,7 @@ function get_drink($id)
 function get_users()
 {
     global $db;
-    $id = $_SESSION['userID'];
+    $id = $_SESSION['uid'];
     $sql = "select * from users";
     $stmt = $db->prepare($sql);
     // $stmt->bind_param("s", $id);
@@ -108,9 +107,9 @@ function edit_user($data)
 {
     global $db;
     $password = md5($data['password']);
-    $sql = "update users set fname = ?, lname = ?, email = ?, password = ? where u_id = ?";
+    $sql = "update users set name = ?, email = ?, password = ? where userID = ?";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param('sssss', $data['fname'], $data['lname'], $data['email'], $password, $data['u_id']);
+    $stmt->bind_param('ssss', $data['nname'], $data['email'], $password, $data['uID']);
     if ($stmt->execute()) {
         return 1;
     }
@@ -120,7 +119,7 @@ function edit_user($data)
 function delete_user($id)
 {
     global $db;
-    $sql = "delete from users where u_id = ?";
+    $sql = "delete from users where uID = ?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $id);
     if ($stmt->execute()) {
@@ -189,7 +188,7 @@ function get_total()
     $total = 0.0;
     if (mysqli_num_rows($drinks)) {
         while ($row = $drinks->fetch_assoc()) {
-            $total += $cart[$row["dID"]] * $row["total"];
+            $total += $cart[$row["dID"]] * $row["dPrice"];
         }
     }
     return $total;
@@ -198,9 +197,9 @@ function get_total()
 function checkout($data)
 {
     global $db;
-    $sql = "insert into orders(userID, name, email, total, drinks) values(?,?,?,?,?)";
+    $sql = "insert into orders(uid, name, email, total, drinks) values(?,?,?,?,?)";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param("sssss", $data["userID"], $data["name"], $data["email"], $data["total"], $data["drinks"]);
+    $stmt->bind_param("sssss", $data["uid"], $data["name"], $data["email"], $data["total"], $data["drinks"]);
     if ($stmt->execute()) {
         return 1;
     }

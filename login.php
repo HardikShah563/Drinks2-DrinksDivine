@@ -28,14 +28,14 @@ if (isset($_POST['login'])) {
     <section class="login-register">
         <h1>Login</h1>
         <?php if (isset($response)) { ?>
-          <div class="message-box <?= $response['type'] ?>">
+          <div class="message-box <?= $response['type'] ?>" style="text-align: center;">
             <p><?= $response['message'] ?></p>
           </div>
         <?php } ?>
 
         <form action="?" method="POST">
-            <input type="email" name="user-email" id="user-email" placeholder="Email Address" required>
-            <input type="password" name="user-password" id="user-password" placeholder="Password" required>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
             <button type="submit" name="login" style="padding: 12px;">Login</button>
         </form>
     </section>

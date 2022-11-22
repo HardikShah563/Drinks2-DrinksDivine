@@ -69,7 +69,7 @@ $drinks = get_drinks();
 
         <button class="go-to-menu btn-animation">
             <span>
-                <a target="_blank" href="cart.html">
+                <a href="./cart.php">
                     Go to Cart
                 </a>
             </span>
