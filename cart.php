@@ -63,13 +63,12 @@ if (isset($cart)) {
     </button>
 
     </div>
-    <div class="add-to-cart-overlay">
+      <div class="add-to-cart-overlay">
         <p>Product Removed from Cart</p>
+      </div>
     </div>
-    </div>
-    <footer class="footer-yellow">
-        <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
-    </footer>
+    
+    <?php include 'footer-yellow.php' ?>
 </body>
 
 </html>

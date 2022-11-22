@@ -42,9 +42,7 @@
         </div>
     </section>
 
-    <footer class="footer-white">
-        <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
-</footer>
+    <?php include 'footer-white.php' ?>
 </body>
 
 </html>

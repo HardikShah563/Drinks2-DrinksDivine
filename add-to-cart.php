@@ -49,6 +49,8 @@
     <div class="message" style="text-align = center;">
         <h1><?= $response['message'] ?></h1>
     </div>
+
+    <?php include 'footer-yellow.php' ?>
 </body>
 
 </html>

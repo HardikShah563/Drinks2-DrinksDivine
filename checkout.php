@@ -98,13 +98,7 @@
         </form>
     </section>
 
-    <section class="" id="footer">
-        <footer>
-            <div class="footer-content">
-                <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
-            </div>
-        </footer>
-    </section>
+    <?php include 'footer-yellow.php' ?>
 </body>
 
 </html>

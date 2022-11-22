@@ -79,9 +79,8 @@ $drinks = get_drinks();
     <div class="add-to-cart-overlay">
         <p>Product Added to Cart</p>
     </div>
-    <footer class="footer-yellow">
-        <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
-</footer>
+    
+    <?php include 'footer-yellow.php' ?>
 </body>
 
 </html>
