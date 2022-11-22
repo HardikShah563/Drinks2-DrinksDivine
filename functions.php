@@ -188,7 +188,7 @@ function get_total()
     $total = 0.0;
     if (mysqli_num_rows($drinks)) {
         while ($row = $drinks->fetch_assoc()) {
-            $total += $cart[$row["dID"]] * $row["dPrice"];
+            $total += $row["dPrice"];
         }
     }
     return $total;
@@ -197,7 +197,7 @@ function get_total()
 function checkout($data)
 {
     global $db;
-    $sql = "insert into orders(uid, name, email, total, drinks) values(?,?,?,?,?)";
+    $sql = "insert into orders(userID, name, email, total, drinks) values(?,?,?,?,?)";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("sssss", $data["uid"], $data["name"], $data["email"], $data["total"], $data["drinks"]);
     if ($stmt->execute()) {

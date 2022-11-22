@@ -46,11 +46,13 @@
 
     ?>
 
-    <div class="message" style="text-align = center;">
+    <div class="message" style="text-align: center; margin-top: 200px;">
         <h1><?= $response['message'] ?></h1>
     </div>
 
-    <?php include 'footer-yellow.php' ?>
+    <footer class="footer-yellow" style="margin-top: 180px; position: absolute; bottom: 0px; width: 100%;">
+        <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
+    </footer>
 </body>
 
 </html>

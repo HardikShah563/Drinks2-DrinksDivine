@@ -23,5 +23,3 @@
             </div>
         </nav>
     </section>
-
-    <!-- Navbar mai edit karna hai from header.php from site -->

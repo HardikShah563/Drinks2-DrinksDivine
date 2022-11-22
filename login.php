@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
       'message' => 'Login Failed!'
     ];
   } else {
-    header("Location: index.php");
+    header("Location: menu.php");
   }
 }
 ?>

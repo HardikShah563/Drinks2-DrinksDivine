@@ -37,6 +37,10 @@ if (isset($cart)) {
               <div class="menu-item-details">
                 <p class="drink-name"><?= $drink['dName'] ?></p>
                 <p class="cost">£<?= $drink['dPrice'] ?></p>
+                <div class="tag tag-icon" style="width: 150px;">
+                  <i class="fa-solid fa-tag tag-icon"></i> 
+                  <p><?= $drink['dTag'] ?></p>
+                </div>
                 <div class="add-to-basket">
                   <form action="add-to-cart.php" method="POST">
                     <input type="hidden" name="dID" value="<?= $drink['dID'] ?>">
@@ -55,12 +59,14 @@ if (isset($cart)) {
         </div>
       <?php } ?>
     <!-- --------------------------- -->
-
-    <button class="go-to-menu btn-animation">
-        <span>
-            <a href="./checkout.php"> Checkout </a>
-        </span>
-    </button>
+    
+    <?php if (mysqli_num_rows($drinks)) { ?>
+      <button class="go-to-menu btn-animation">
+          <span>
+              <a href="./checkout.php"> Checkout </a>
+          </span>
+      </button>
+    <?php } ?>
 
     </div>
       <div class="add-to-cart-overlay">
@@ -68,7 +74,13 @@ if (isset($cart)) {
       </div>
     </div>
     
-    <?php include 'footer-yellow.php' ?>
+    <?php if (mysqli_num_rows($drinks)) { ?>
+      <?php include 'footer-yellow.php' ?>
+    <?php } else {?>
+      <footer class="footer-yellow" style="margin-top: 180px; position: absolute; bottom: 0px; width: 100%;">
+        <p id="copyrights">&copy; Copyright Drinks Divine | All Rights Reserved</p>
+      </footer>
+    <?php } ?>
 </body>
 
 </html>
