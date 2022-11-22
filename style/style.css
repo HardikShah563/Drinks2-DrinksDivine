@@ -992,7 +992,30 @@ form {
     }
 }
 
+/* =================================================== 
+Profile Section CSS
+=================================================== */
+.profile {
+    background-color: var(--yellow);
+    width: 300px;
+    padding: 30px;
+    margin: 100px auto;
+    border-radius: 40px;
+}
 
+.profile .profile-img img {
+    width:  150px;
+    margin: 50px auto;
+}
+
+.profile .profile-info {
+    text-align: center;
+}
+
+.profile .profile-info p {
+    width: 200px;
+    margin: 20px auto;
+}
 
 /* =================================================== 
 ScrollBar CSS

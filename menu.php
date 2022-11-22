@@ -19,20 +19,17 @@ $drinks = get_drinks();
         <h1>Menu</h1>
 
         <div class="sort-tags">
-            <div class="tag">
+            <div class="tag" style="padding-right: 20px;">
                 <i class="fa-solid fa-tag"></i>
                 <p>Coctails</p>
-                <i class="fa-solid fa-plus plus"></i>
             </div>
-            <div class="tag">
+            <div class="tag" style="padding-right: 20px;">
                 <i class="fa-solid fa-tag"></i>
                 <p>Alcoholic</p>
-                <i class="fa-solid fa-plus plus"></i>
             </div>
-            <div class="tag">
+            <div class="tag" style="padding-right: 20px;">
                 <i class="fa-solid fa-tag"></i>
                 <p>Non-Alcoholic</p>
-                <i class="fa-solid fa-plus plus"></i>
             </div>
         </div>
 
