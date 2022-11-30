@@ -16,10 +16,11 @@
                 <li><a href="./cart.php"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 
                 <?php if (isset($_SESSION['uid'])) { ?>
-                        <li><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-                    <?php } else { ?>
-                        <li><a href="./login.php"><i class="fa-regular fa-user"></i></a></li>
-                    <?php } ?>
+                    <li><a href="./myaccount.php"><i class="fa-solid fa-user-pen"></i> </a> </li>
+                    <li><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <?php } else { ?>
+                    <li><a href="./login.php"><i class="fa-regular fa-user"></i></a></li>
+                <?php } ?>
             </div>
         </nav>
     </section>

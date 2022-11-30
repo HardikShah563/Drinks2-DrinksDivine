@@ -20,7 +20,6 @@ if (isset($_POST['register'])) {
           'type' => 'success',
           'message' => 'User Registered Successfully! You can Log in!',
         ];
-        login($data);
       } else {
         $response = [
           'type' => 'error',

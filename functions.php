@@ -96,7 +96,7 @@ function get_users()
 function get_user($id)
 {
     global $db;
-    $sql = "select * from users where userID = ?";
+    $sql = "select * from users where uid = ?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $id);
     $stmt->execute();
@@ -107,9 +107,9 @@ function edit_user($data)
 {
     global $db;
     $password = md5($data['password']);
-    $sql = "update users set name = ?, email = ?, password = ? where userID = ?";
+    $sql = "update users set name = ?, email = ?, password = ? where uid = ?";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param('ssss', $data['nname'], $data['email'], $password, $data['uID']);
+    $stmt->bind_param('ssss', $data['name'], $data['email'], $password, $data['uid']);
     if ($stmt->execute()) {
         return 1;
     }
@@ -119,7 +119,7 @@ function edit_user($data)
 function delete_user($id)
 {
     global $db;
-    $sql = "delete from users where uID = ?";
+    $sql = "delete from users where uid = ?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $id);
     if ($stmt->execute()) {
